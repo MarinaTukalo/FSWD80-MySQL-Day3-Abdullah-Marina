@@ -91,11 +91,10 @@ group by employees.emp_no
 
   Create a query which will join all tables and show all data from all tables.
  */
-SELECT *
+SELECT employees.*,titles.*,salaries.*,dept_emp.*,departments.*,dept_manager.*
 FROM employees
 INNER JOIN titles ON titles.emp_no = employees.emp_no
 INNER JOIN salaries ON salaries.emp_no = employees.emp_no
 INNER JOIN dept_emp ON dept_emp.emp_no = employees.emp_no
 INNER JOIN departments ON departments.dept_no = dept_emp.dept_no
 INNER JOIN dept_manager ON dept_manager.dept_no = departments.dept_no
-group by employees.emp_no
